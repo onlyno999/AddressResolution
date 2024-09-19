@@ -14,7 +14,7 @@ export async function onRequest(context) {
     return Math.abs(hash) % servers.length;
   }
 
-  // 获取请求的源 IP 地址
+  // 获取请求的源 IP 地址（通过 headers）
   const ip = context.request.headers.get('cf-connecting-ip') || 'default-ip';
 
   // 选择目标 URL
